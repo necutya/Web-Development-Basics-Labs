@@ -1,17 +1,13 @@
 @extends('layouts.layout')
-@section('title', $post->title)
+@section('title', 'Post')
 @section('content')
     <div class="post">
+        <a class="name" href="#"></a>
         <div class="content">
             <div class="metadata" style="justify-content: space-between">
                 <div class="flex_row">
-                    <p><a class="name" href="/user/{{$post->author->id}}">{{$post->author->name}}</a></p>
-                    <p class="date">{{date("H:i d/m/y",strtotime($post->updated_at))}}</p>
-                    @if($post->hashtags)
-                        @foreach($post->hashtags as $hashtag)
-                            <a href="/hashtag/{{$hashtag->id}}" class="hashtag">{{$hashtag->name}}</a>
-                        @endforeach
-                    @endif
+                    <p><a class="name" href="">{{App\Post::author($post->user_id)}}</a></p>
+                    <p class="date">{{$post->updated_at}}</p>
                 </div>
 {{--                {% if post.author.username == current_user.username%}--}}
 {{--                <div class="flex_row">--}}
