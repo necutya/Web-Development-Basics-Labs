@@ -6,8 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    public static function author($id) {
-        return User::find($id)->name;
-            //(DB::table('users')->find($post->user_id))->name
+    protected $table='posts';
+    public function author() {
+        return $this->belongsTo('App\User', 'user_id');
+    }
+
+    public function hashtags() {
+        return $this->belongsToMany('App\Hashtag');
     }
 }

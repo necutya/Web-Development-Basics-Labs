@@ -13,10 +13,8 @@
     <div class="header nav">
         <a href="{{url('home')}}">Home</a>
         <a href="{{url('about')}}">About</a>
-    </div>
-    <div class="header auth">
         @if(isset(Auth::user()->email))
-            <a href="">New post</a>
+            <a href="{{url('create_post')}}">New post</a>
             <a href="">Account</a>
             <a href="{{url('logout')}}">Log out</a>
         @else

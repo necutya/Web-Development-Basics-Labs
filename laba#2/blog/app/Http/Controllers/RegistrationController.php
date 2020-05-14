@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App;
 use Illuminate\Http\Request;
 
 class RegistrationController extends Controller
@@ -23,7 +24,7 @@ class RegistrationController extends Controller
             'password' =>  \Hash::make($req->get('password'))
         );
 
-        \DB::table('users')->insert($user_data);
+        App\User::insert($user_data);
 
         return redirect('login')->with('msg', 'You have been successfully register. Now, you can login.');
     }

@@ -22,10 +22,10 @@ header {
   transition: 2s all;
 }
 header a {
-  margin: 1em;
+  margin: 0.5em;
   color: aliceblue;
   text-decoration: none;
-  padding: 1em 1.5em;
+  padding: 1em;
 }
 @media (max-width: 576px) {
   header {
@@ -249,7 +249,7 @@ legend {
 }
 .text_area {
   resize: none;
-  min-height: 300px;
+  min-height: 200px;
 }
 .article_img {
   height: 70px;
@@ -302,6 +302,13 @@ footer a:hover {
 
 .active {
   background-color: #59e9df;
+
+}
+
+.hashtag {
+  margin-left: 1em;
+  font-size:12px;
+  text-decoration: none;
 
 }
 /*# sourceMappingURL=style.css.map */
